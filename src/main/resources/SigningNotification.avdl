@@ -1,0 +1,23 @@
+@namespace("signing.notification.avro")
+protocol SigningNotificationProtocol {
+
+    record SigningNotification {
+       Header header;
+       Body body;
+    }
+
+    record Header {
+        string id; // The unique id (UUID) of the notification.
+    }
+
+    record Body {
+        string signingId;
+        Status status;
+    }
+
+    enum Status {
+        CANCELLED,
+        FAILED,
+        SIGNED
+    }
+}

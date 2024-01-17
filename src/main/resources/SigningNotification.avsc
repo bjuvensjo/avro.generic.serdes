@@ -1,0 +1,33 @@
+{
+  "type" : "record",
+  "name" : "SigningNotification",
+  "namespace" : "signing.notification.avro",
+  "fields" : [ {
+    "name" : "header",
+    "type" : {
+      "type" : "record",
+      "name" : "Header",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "string"
+      } ]
+    }
+  }, {
+    "name" : "body",
+    "type" : {
+      "type" : "record",
+      "name" : "Body",
+      "fields" : [ {
+        "name" : "signingId",
+        "type" : "string"
+      }, {
+        "name" : "status",
+        "type" : {
+          "type" : "enum",
+          "name" : "Status",
+          "symbols" : [ "CANCELLED", "FAILED", "SIGNED" ]
+        }
+      } ]
+    }
+  } ]
+}
